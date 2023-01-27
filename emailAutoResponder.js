@@ -1,4 +1,4 @@
-// Configurable script to auto reply in Gmail thread with attachment.
+// Configurable script to auto reply to new emails in Gmail thread with attachment.
 // Uses Gmail in-house filters to Star and Label relevant emails to save compute time. (Max 90 min / day.)
 // Set to run at intervals via Triggers. (Min frequency of 1 min.)
 // Based on https://stackoverflow.com/questions/36108478/how-to-trigger-a-google-apps-script-once-an-email-get-in-the-inbox
@@ -6,7 +6,7 @@
 function emailAutoResponder() {
 
   // This is the label name used to isolate relevant threads
-  const myLabel = "MYTESTLABEL"
+  const myLabel = 'MYTESTLABEL'
 
   // Gets all threads that are starred and labelled with custom label
   const threads = GmailApp.search('is:starred label:' + myLabel);
@@ -19,7 +19,7 @@ function emailAutoResponder() {
     if (messages.length == 1) {
 
       var file = DriveApp.getFilesByName('myattachment.pdf');
-      var replyBody = "Hello this is my auto reply. \nKind Regards\n";
+      var replyBody = 'Hello this is my auto reply message. \nKind Regards\n';
       
       thread.reply(replyBody, {
         attachments: [file.next()],
