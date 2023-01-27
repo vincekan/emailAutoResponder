@@ -1,5 +1,6 @@
 // Configurable script to auto reply in Gmail thread with attachment.
-// Set to run at intervals via Triggers. Min frequency of 1 min.
+// Uses Gmail in-house filters to Star and Label relevant emails to save compute time. (Max 90 min / day.)
+// Set to run at intervals via Triggers. (Min frequency of 1 min.)
 // Based on https://stackoverflow.com/questions/36108478/how-to-trigger-a-google-apps-script-once-an-email-get-in-the-inbox
 
 function emailAutoResponder() {
